@@ -15,7 +15,7 @@ class Calculator:
             [integrate.quad(lambda u: imag_func(u) * np.sin(m * c.pi * u / a), 0, a)[0] for m in n_vals])
 
         df = pd.DataFrame({'Energy': self.omega * c.hbar,
-                           'Probability': 2/a * (self.real_func_integrals + self.imag_func_integrals)**2})
+                           'Probability': 2/a * (self.real_func_integrals**2 + self.imag_func_integrals**2)})
         df.to_csv('Stationary State Probabilities.csv', index=False)
 
 

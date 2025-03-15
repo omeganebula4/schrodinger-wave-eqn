@@ -48,6 +48,7 @@ def main():
     ax2d.legend()
     ax2d.legend(loc='upper left', bbox_to_anchor=(1.05, 1))
 
+    plt.savefig('fig.png', dpi=300)
     plt.show()
 
 if __name__ == '__main__':

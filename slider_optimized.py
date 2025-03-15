@@ -34,9 +34,6 @@ def main():
         min_z = min(min(results[i][1]), min_z)
         max_norm = max(max(results[i][2]), max_norm)
 
-    # starting value of t
-    t=0
-
     # update function called on slider update
     def update():
 
@@ -79,7 +76,7 @@ def main():
     # axis for slider
     ax_t = plt.axes((0.25, 0.1, 0.65, 0.03))
     # slider parameters/limits
-    slider_t = Slider(ax_t, 'Time (s)', 0, valmax=t_max, valinit=t, valstep=t_max/(t_num_slider-1))
+    slider_t = Slider(ax_t, 'Time (s)', 0, valmax=t_max, valinit=0, valstep=t_max/(t_num_slider-1))
 
     # call update function
     slider_t.on_changed(lambda val: update())
